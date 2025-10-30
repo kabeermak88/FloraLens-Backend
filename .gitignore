@@ -1,0 +1,27 @@
+# 
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+
+# Frontend
+frontend/
+node_modules/
+
+# Datasets / tests
+data/
+uploads/
+test.*
+train_*.py
+
+# OS/IDE junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+__pycache__/
+*.pyc
