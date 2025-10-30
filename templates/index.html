@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌸 Flower Identifier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f8fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      margin: 20px 0;
+      padding: 20px;
+      border: 2px dashed #888;
+      background: white;
+      border-radius: 10px;
+    }
+    input[type="file"] {
+      margin: 10px 0;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    img {
+      margin-top: 20px;
+      width: 300px;
+      border-radius: 10px;
+    }
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 Flower Identifier</h1>
+
+  <form action="/" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" accept="image/*" required><br>
+    <button type="submit">Identify Flower</button>
+  </form>
+
+  {% if uploaded_image %}
+  <img src="{{ uploaded_image }}" alt="Uploaded Image">
+  <div class="result">
+    <p><b>Prediction:</b> {{ label }}</p>
+    <p><b>Confidence:</b> {{ confidence }}</p>
+  </div>
+  {% endif %}
+</body>
+</html>
